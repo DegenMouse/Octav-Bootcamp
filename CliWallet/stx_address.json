@@ -1,0 +1,10 @@
+{
+  "mainnet": {
+    "STACKS": "SP2F66ASMYZ9M8EEVD4S76RCF9X15WZD2EQFR5MV1",
+    "BTC": "1FSUZgFB44cctuoxf1rneEyyKqNwePRtJu"
+  },
+  "testnet": {
+    "STACKS": "ST2F66ASMYZ9M8EEVD4S76RCF9X15WZD2EPE5RR75",
+    "BTC": "muxRrjL9s63sg2HaNaqAUACJBpyeVvZ2SD"
+  }
+}

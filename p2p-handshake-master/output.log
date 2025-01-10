@@ -1,0 +1,18 @@
+Performing handshake for 35.175.209.71:18333:
+Sent version message to 35.175.209.71:18333!
+Got version message back: 70016
+Sent verack message to 35.175.209.71:18333!
+Got verack message back.
+
+Performing handshake for 141.98.219.198:18333:
+Sent version message to 141.98.219.198:18333!
+Got version message back: 70016
+Sent verack message to 141.98.219.198:18333!
+Got verack message back.
+
+Performing handshake for 169.155.45.180:18333:
+Sent version message to 169.155.45.180:18333!
+Got version message back: 70016
+Sent verack message to 169.155.45.180:18333!
+Got verack message back.
+
