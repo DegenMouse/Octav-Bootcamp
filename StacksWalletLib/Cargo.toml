@@ -1,0 +1,17 @@
+[package]
+name = "stacks_wallet"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bip39 = { version = "2.1.0", features = ["rand"] }
+bitcoin = "0.32.5"
+thiserror = "2.0.9"
+hex = "0.4"
+sha2 = "0.10"
+ripemd = "0.1"
+bs58 = "0.5.1"
+stacks-core = "0.1.0"
+[dev-dependencies]
+proptest = "1.6.0"
+rand = "0.8.5"
