@@ -4,7 +4,6 @@ use crate::error::WeatherResult;
 
 use std::fs::File;
 use std::io::{self, Write, BufWriter, BufReader, Read};
-use hex;
 use chrono::Utc;
 
 pub fn save_weather_data_current(location: &str, data: CurrentWeatherData) -> WeatherResult<()> {

@@ -1,8 +1,6 @@
 use std::env;
 use dotenv::dotenv;
-use reqwest;
 use crate::error::WeatherResult;
-use anyhow;
 use crate::weather::{NowWeather, ForecastResponse, HourlyForecast};
 use chrono::Utc;
 pub async fn get_weather(location: &str) -> WeatherResult<NowWeather> {

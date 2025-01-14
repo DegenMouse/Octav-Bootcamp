@@ -106,7 +106,7 @@ async fn display_current_weather(location: &str, unit: &str, compare: Option<&st
                                 
                                 // Save comparison data
                                 match file_io::save_weather_data_current(compare_location, compare_data) {
-                                    Ok(_) => println!("Comparison weather data saved successfully."),
+                                    Ok(_) => println!("{}", "Comparison weather data saved successfully.".green()),
                                     Err(e) => println!("Error saving comparison weather data: {:?}", e),
                                 }
                             }
@@ -115,11 +115,9 @@ async fn display_current_weather(location: &str, unit: &str, compare: Option<&st
                     }
                 }
             }
-            
-            return;
         }
         _ => {
-            let current_weather = match fetch::get_weather(&location).await {
+            let current_weather = match fetch::get_weather(location).await {
                 Ok(weather) => weather,
                 Err(e) => {
                     println!("{}", format!("Error: {:?}", e).red());
@@ -127,7 +125,7 @@ async fn display_current_weather(location: &str, unit: &str, compare: Option<&st
                 }
             };
         
-            let hourly_weather = match fetch::get_weather_hourly(&location).await {
+            let hourly_weather = match fetch::get_weather_hourly(location).await {
                 Ok(weather) => weather,
                 Err(e) => {
                     println!("{}", format!("Error fetching hourly forecast: {:?}", e).red());
@@ -163,17 +161,17 @@ async fn display_current_weather(location: &str, unit: &str, compare: Option<&st
                         
                         // Save comparison data
                         match file_io::save_weather_data_current(compare_location, compare_data) {
-                            Ok(_) => println!("Comparison weather data saved successfully."),
-                            Err(e) => println!("Error saving comparison weather data: {:?}", e),
+                            Ok(_) => println!("{}", "Comparison weather data saved successfully.".green()),
+                            Err(e) => println!("{}", format!("Error: {:?}", e).red()),
                         }
                     }
-                    Err(e) => println!("Error fetching comparison weather: {:?}", e),
+                    Err(e) => println!("{}", format!("Error: {:?}", e).red()),
                 }
             }
         
             match file_io::save_weather_data_current(location, weather_data) {
-                Ok(_) => println!("Weather data saved successfully."),
-                Err(e) => println!("Error saving weather data: {:?}", e),
+                Ok(_) => println!("{}", "Weather data saved successfully.".green()),
+                Err(e) => println!("{}", format!("Error: {:?}", e).red()),
             }
         }
     }
@@ -181,11 +179,8 @@ async fn display_current_weather(location: &str, unit: &str, compare: Option<&st
 
 async fn display_forecast_weather_interval(location: &str, unit: &str, compare: Option<&str>, export: bool) {
     display_forecast_weather(location, unit, export).await;
-    match compare {
-        Some(compare_location) => {
-            display_forecast_weather(compare_location, unit, export).await;
-        }
-        None => (),
+    if let Some(compare_location) = compare {
+        display_forecast_weather(compare_location, unit, export).await;
     }   
 }
 
@@ -194,10 +189,9 @@ async fn display_forecast_weather(location: &str, unit: &str, export: bool) {
         Ok(true) => {
             weather_offline_forecast(location, unit, export).await;
             println!("{}", "Using cached data".green());
-            return;
         }
         _ => {
-            match fetch::get_weather_forecast(&location).await {
+            match fetch::get_weather_forecast(location).await {
                 Ok(weather) => {
                     println!("\nForecast for {}:", location);
                     

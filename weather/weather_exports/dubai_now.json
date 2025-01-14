@@ -1,10 +1,10 @@
 {
   "current": {
     "current": {
-      "temp_c": 22.2,
-      "temp_f": 72.0,
-      "wind_kph": 13.3,
-      "wind_mph": 8.3,
+      "temp_c": 22.1,
+      "temp_f": 71.8,
+      "wind_kph": 13.0,
+      "wind_mph": 8.1,
       "wind_dir": "WNW",
       "precip_mm": 0.0,
       "precip_in": 0.0
@@ -237,12 +237,12 @@
             },
             {
               "time": "2025-01-14 21:00",
-              "temp_c": 22.2,
-              "temp_f": 72.0,
+              "temp_c": 20.3,
+              "temp_f": 68.6,
               "wind_kph": 13.0,
               "wind_mph": 8.1,
               "condition": {
-                "text": "Clear"
+                "text": "Clear "
               }
             },
             {
@@ -270,5 +270,5 @@
       ]
     }
   },
-  "time": "1736876234"
+  "time": "1736877609"
 }
