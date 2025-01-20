@@ -1,0 +1,17 @@
+{
+  "source": "/Users/octavoprita/Desktop/Nig",
+  "destination": "/Users/octavoprita/Documents/Backups/Test",
+  "interval": 5,
+  "pid_file": "/Users/octavoprita/Documents/Projects/Rust/Rust-Projects/AutomatedBackUp/BackUpInfo/app.pid",
+  "log_file": "/Users/octavoprita/Documents/Projects/Rust/Rust-Projects/AutomatedBackUp/BackUpInfo/app.log",
+  "err_file": "/Users/octavoprita/Documents/Projects/Rust/Rust-Projects/AutomatedBackUp/BackUpInfo/app.err",
+  "password": "123456",
+  "exclude": {
+    "file": [
+      
+    ],
+    "directory": [
+      
+    ]
+  }
+}
