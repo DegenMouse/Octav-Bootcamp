@@ -6,7 +6,7 @@ use colored::Colorize;
 use crate::error::BackupResult;
 use crate::consts::ConfigSettings;
 use crate::encryption::encrypt_large_file;
-use crate::file_io::{compress, delete_file};
+use crate::file_io::{compress, delete_file, save_config_to_json, get_config_from_json};
 
 
 macro_rules! info_m {
@@ -70,18 +70,28 @@ pub fn stop_daemon(config: ConfigSettings) -> BackupResult<()> {
 }
 
 pub async fn run_background_task(config: &ConfigSettings) -> BackupResult<()>{
-    let mut count = 1;
     loop {
-        // copy_files(config.source.clone(), config.destination.clone())?;
-        let filename = compress(config.source.clone(), config.destination.clone(), config.exclude.clone(), count)?;
+
+        let new_config = get_config_from_json()?;
+        let mut dcount = new_config.count;
+        dcount += 1;
+        save_config_to_json(&ConfigSettings {
+            source: config.source.clone(),
+            destination: config.destination.clone(),
+            exclude: config.exclude.clone(),
+            password: config.password.clone(),
+            interval: config.interval,
+            count: dcount,
+            log_file: config.log_file.clone(),
+            err_file: config.err_file.clone(),
+            pid_file: config.pid_file.clone(),
+        })?;
+        let filename = compress(config.source.clone(), config.destination.clone(), config.exclude.clone(), dcount)?;
         encrypt_large_file(&format!("{}/{}", config.destination, filename), &format!("{}/{}.enc", config.destination, filename), config.password.clone())?;
         let filename_without_enc = filename.trim_end_matches(".enc");
         delete_file(format!("{}/{}", config.destination, filename_without_enc))?;
-        //println!("trying to delete{}", format!("{}/{}.enc", config.destination, filename));
-        // decrypt_large_file(&format!("{}/{}.enc", config.destination, filename), &format!("{}/{}", config.destination, filename), config.password.clone())?;
         println!("Backup made at {}", Local::now().format("%Y-%m-%d %H:%M:%S"));
         tokio::time::sleep(tokio::time::Duration::from_secs(60 * config.interval as u64)).await;
-        count += 1;
     }
 }
 

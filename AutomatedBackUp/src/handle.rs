@@ -43,7 +43,13 @@ pub fn flow() -> BackupResult<()> {
                         restore_latest_backup(config)
                     }
                 }
-                RestoreCommand::Custom => restore_custom_backup(config)
+                RestoreCommand::Custom => {
+                    if let Some(location) = restore_subcommand.location {
+                        restore_custom_backup(config, Some(location))
+                    } else {
+                        restore_custom_backup(config, None)
+                    }   
+                }
             }
         }
     }

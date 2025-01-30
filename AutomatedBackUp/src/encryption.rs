@@ -96,7 +96,7 @@ pub fn encrypt_large_file(
     let key = create_key(password, nonce.clone())?;
     let nonce = Nonce::from_slice(nonce.as_slice())?;
 
-    for src_chunk in src.chunks(CHUNK_SIZE) {
+    for (_, src_chunk) in src.chunks(CHUNK_SIZE).enumerate() {
         encrypt_core(&mut dist, src_chunk.to_vec(), &key, nonce)?;
     }
 
@@ -121,7 +121,8 @@ pub fn decrypt_large_file(
     let key = create_key(password, nonce.clone())?;
     let nonce = Nonce::from_slice(nonce.as_slice())?;
 
-    for src_chunk in src.chunks(CHUNK_SIZE + CHACHA_KEYSIZE + POLY1305_OUTSIZE) {
+    for (count, src_chunk) in src.chunks(CHUNK_SIZE + CHACHA_KEYSIZE + POLY1305_OUTSIZE).enumerate() {
+        println!("Decrypting chunk {}", count);
         decrypt_core(&mut output_file, src_chunk.to_vec(), &key, nonce)?;
     }
 

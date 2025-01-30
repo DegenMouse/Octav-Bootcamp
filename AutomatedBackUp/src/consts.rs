@@ -4,12 +4,13 @@ use serde::{Serialize, Deserialize};
 pub struct ConfigSettings {
     pub source: String,
     pub destination: String,
-    pub interval: i32,
+    pub interval: u32,
     pub pid_file: String,
     pub log_file: String,
     pub err_file: String,
     pub password: String,
-    pub exclude: ExcludeTypes
+    pub exclude: ExcludeTypes,
+    pub count: i32
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]

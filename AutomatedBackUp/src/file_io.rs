@@ -60,7 +60,7 @@ fn get_input(text: &str) -> String {
 pub fn get_config_input() -> BackupResult<ConfigSettings> {
     let source = get_path_input("Enter the source path: ");
     let destination = get_path_input("Enter the destination path: ");
-    let interval = get_input("Enter the backup minute interval: ").parse::<i32>()
+    let interval = get_input("Enter the backup minute interval: ").parse::<u32>()
         .map_err(|e| anyhow::anyhow!("{}", warn_m!(format!("Invalid interval: {}", e))))?;
     let info_path = get_path_input("Enter the info file path: ");
     let password = get_input("Enter the password for encryption: ");
@@ -76,7 +76,8 @@ pub fn get_config_input() -> BackupResult<ConfigSettings> {
         log_file: format!("{}/app.log", info_path),
         err_file: format!("{}/app.err", info_path),
         password,
-        exclude: exclude_types
+        exclude: exclude_types,
+        count: 1
     })
 }
 
@@ -189,14 +190,18 @@ pub fn restore_latest_backup(config: ConfigSettings) -> BackupResult<()> {
     Ok(())
 }
 
-pub fn restore_custom_backup(config: ConfigSettings) -> BackupResult<()> {
+pub fn restore_custom_backup(config: ConfigSettings, option: Option<String>) -> BackupResult<()> {
     let backup_nr = get_input("Enter the backup number to restore: ");
     for entry in WalkDir::new(&config.destination).into_iter().filter_map(|e| e.ok()) {
         if entry.path().file_name()
             .and_then(|n| n.to_str())
             .filter(|n| n.starts_with(&backup_nr))
             .is_some() {
-                decompress(entry.path().to_string_lossy().to_string(), config.source.clone(), config)?;
+                if let Some(location) = option {
+                    decompress(entry.path().to_string_lossy().to_string(), location, config)?;
+                } else {
+                    decompress(entry.path().to_string_lossy().to_string(), config.source.clone(), config)?;
+                }
                 return Ok(());
         }
     }

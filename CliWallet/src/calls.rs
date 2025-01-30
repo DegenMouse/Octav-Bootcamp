@@ -41,7 +41,7 @@ pub async fn request_stx_tokens(address: &str) -> Result<(), Box<dyn std::error:
     
     // Construct URL with query parameters
     let url = format!("{}?address={}&stacking=true", base_url, address);
-
+    println!("{}",url);
     // Create an HTTP client
     let client = Client::new();
 
