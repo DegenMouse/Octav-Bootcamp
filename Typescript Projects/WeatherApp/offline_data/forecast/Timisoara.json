@@ -1,0 +1,29 @@
+{
+  "day": [
+    {
+      "day": "Tuesday",
+      "avgtemp_c": 1.7,
+      "avgtemp_f": 35.1,
+      "maxwind_mph": 8.9,
+      "maxwind_kph": 14.4,
+      "condition": "Sunny"
+    },
+    {
+      "day": "Wednesday",
+      "avgtemp_c": 2.5,
+      "avgtemp_f": 36.6,
+      "maxwind_mph": 8.1,
+      "maxwind_kph": 13,
+      "condition": "Sunny"
+    },
+    {
+      "day": "Thursday",
+      "avgtemp_c": 2.6,
+      "avgtemp_f": 36.7,
+      "maxwind_mph": 10.7,
+      "maxwind_kph": 17.3,
+      "condition": "Sunny"
+    }
+  ],
+  "timestamp": 1738628221
+}

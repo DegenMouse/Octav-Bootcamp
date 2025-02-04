@@ -1,0 +1,29 @@
+{
+  "day": [
+    {
+      "day": "Tuesday",
+      "avgtemp_c": 7.4,
+      "avgtemp_f": 45.3,
+      "maxwind_mph": 15,
+      "maxwind_kph": 24.1,
+      "condition": "Patchy rain nearby"
+    },
+    {
+      "day": "Wednesday",
+      "avgtemp_c": 5.7,
+      "avgtemp_f": 42.2,
+      "maxwind_mph": 8.3,
+      "maxwind_kph": 13.3,
+      "condition": "Partly Cloudy "
+    },
+    {
+      "day": "Thursday",
+      "avgtemp_c": 4.4,
+      "avgtemp_f": 39.8,
+      "maxwind_mph": 10.1,
+      "maxwind_kph": 16.2,
+      "condition": "Sunny"
+    }
+  ],
+  "timestamp": 1738627508
+}

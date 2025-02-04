@@ -1,0 +1,252 @@
+{
+  "current": {
+    "temp_c": 6.2,
+    "temp_f": 43.2,
+    "wind_kph": 9.4,
+    "wind_mph": 5.8,
+    "condition": "Mist"
+  },
+  "hourly": [
+    {
+      "hour": "00:00",
+      "weather": {
+        "temp_c": 5.1,
+        "temp_f": 41.2,
+        "wind_kph": 9.7,
+        "wind_mph": 6,
+        "condition": "Mist"
+      }
+    },
+    {
+      "hour": "01:00",
+      "weather": {
+        "temp_c": 6.2,
+        "temp_f": 43.2,
+        "wind_kph": 9.4,
+        "wind_mph": 5.8,
+        "condition": "Mist"
+      }
+    },
+    {
+      "hour": "02:00",
+      "weather": {
+        "temp_c": 5.1,
+        "temp_f": 41.3,
+        "wind_kph": 10.4,
+        "wind_mph": 6.5,
+        "condition": "Partly Cloudy "
+      }
+    },
+    {
+      "hour": "03:00",
+      "weather": {
+        "temp_c": 5.5,
+        "temp_f": 41.9,
+        "wind_kph": 11.2,
+        "wind_mph": 6.9,
+        "condition": "Partly Cloudy "
+      }
+    },
+    {
+      "hour": "04:00",
+      "weather": {
+        "temp_c": 5.8,
+        "temp_f": 42.4,
+        "wind_kph": 12.2,
+        "wind_mph": 7.6,
+        "condition": "Partly Cloudy "
+      }
+    },
+    {
+      "hour": "05:00",
+      "weather": {
+        "temp_c": 5.8,
+        "temp_f": 42.5,
+        "wind_kph": 13.3,
+        "wind_mph": 8.3,
+        "condition": "Partly Cloudy "
+      }
+    },
+    {
+      "hour": "06:00",
+      "weather": {
+        "temp_c": 5.8,
+        "temp_f": 42.4,
+        "wind_kph": 15.5,
+        "wind_mph": 9.6,
+        "condition": "Partly Cloudy "
+      }
+    },
+    {
+      "hour": "07:00",
+      "weather": {
+        "temp_c": 5.7,
+        "temp_f": 42.3,
+        "wind_kph": 15.5,
+        "wind_mph": 9.6,
+        "condition": "Partly Cloudy "
+      }
+    },
+    {
+      "hour": "08:00",
+      "weather": {
+        "temp_c": 5.8,
+        "temp_f": 42.4,
+        "wind_kph": 15.5,
+        "wind_mph": 9.6,
+        "condition": "Partly Cloudy "
+      }
+    },
+    {
+      "hour": "09:00",
+      "weather": {
+        "temp_c": 6.5,
+        "temp_f": 43.8,
+        "wind_kph": 16.9,
+        "wind_mph": 10.5,
+        "condition": "Partly Cloudy "
+      }
+    },
+    {
+      "hour": "10:00",
+      "weather": {
+        "temp_c": 7.5,
+        "temp_f": 45.5,
+        "wind_kph": 18.7,
+        "wind_mph": 11.6,
+        "condition": "Partly Cloudy "
+      }
+    },
+    {
+      "hour": "11:00",
+      "weather": {
+        "temp_c": 8.5,
+        "temp_f": 47.3,
+        "wind_kph": 20.9,
+        "wind_mph": 13,
+        "condition": "Cloudy "
+      }
+    },
+    {
+      "hour": "12:00",
+      "weather": {
+        "temp_c": 9.2,
+        "temp_f": 48.6,
+        "wind_kph": 19.8,
+        "wind_mph": 12.3,
+        "condition": "Cloudy "
+      }
+    },
+    {
+      "hour": "13:00",
+      "weather": {
+        "temp_c": 10,
+        "temp_f": 50,
+        "wind_kph": 20.9,
+        "wind_mph": 13,
+        "condition": "Cloudy "
+      }
+    },
+    {
+      "hour": "14:00",
+      "weather": {
+        "temp_c": 10.1,
+        "temp_f": 50.1,
+        "wind_kph": 22.3,
+        "wind_mph": 13.9,
+        "condition": "Overcast "
+      }
+    },
+    {
+      "hour": "15:00",
+      "weather": {
+        "temp_c": 9.3,
+        "temp_f": 48.8,
+        "wind_kph": 23.4,
+        "wind_mph": 14.5,
+        "condition": "Overcast "
+      }
+    },
+    {
+      "hour": "16:00",
+      "weather": {
+        "temp_c": 9,
+        "temp_f": 48.1,
+        "wind_kph": 24.1,
+        "wind_mph": 15,
+        "condition": "Overcast "
+      }
+    },
+    {
+      "hour": "17:00",
+      "weather": {
+        "temp_c": 9.2,
+        "temp_f": 48.6,
+        "wind_kph": 20.5,
+        "wind_mph": 12.8,
+        "condition": "Overcast "
+      }
+    },
+    {
+      "hour": "18:00",
+      "weather": {
+        "temp_c": 9.8,
+        "temp_f": 49.7,
+        "wind_kph": 22.3,
+        "wind_mph": 13.9,
+        "condition": "Patchy rain nearby"
+      }
+    },
+    {
+      "hour": "19:00",
+      "weather": {
+        "temp_c": 9.2,
+        "temp_f": 48.6,
+        "wind_kph": 18.4,
+        "wind_mph": 11.4,
+        "condition": "Patchy rain nearby"
+      }
+    },
+    {
+      "hour": "20:00",
+      "weather": {
+        "temp_c": 8.3,
+        "temp_f": 47,
+        "wind_kph": 11.5,
+        "wind_mph": 7.2,
+        "condition": "Overcast "
+      }
+    },
+    {
+      "hour": "21:00",
+      "weather": {
+        "temp_c": 7.8,
+        "temp_f": 46,
+        "wind_kph": 13.7,
+        "wind_mph": 8.5,
+        "condition": "Clear "
+      }
+    },
+    {
+      "hour": "22:00",
+      "weather": {
+        "temp_c": 7.3,
+        "temp_f": 45.1,
+        "wind_kph": 15.1,
+        "wind_mph": 9.4,
+        "condition": "Clear "
+      }
+    },
+    {
+      "hour": "23:00",
+      "weather": {
+        "temp_c": 6.6,
+        "temp_f": 43.8,
+        "wind_kph": 14.8,
+        "wind_mph": 9.2,
+        "condition": "Clear "
+      }
+    }
+  ],
+  "timestamp": 1738627516
+}
