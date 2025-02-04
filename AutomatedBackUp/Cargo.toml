@@ -19,3 +19,4 @@ zip = "0.6.6"
 orion = "0.17.7"
 rand_core = { version = "0.6.4", features = ["getrandom"] }
 colored = "3.0.0"
+notify = "6.1.1"

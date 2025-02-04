@@ -6,7 +6,7 @@ use colored::Colorize;
 use crate::error::BackupResult;
 use crate::consts::ConfigSettings;
 use crate::encryption::encrypt_large_file;
-use crate::file_io::{compress, delete_file, save_config_to_json, get_config_from_json};
+use crate::file_io::{compress, delete_file, get_config_from_json, save_config_to_json, watch_file_changes};
 
 
 macro_rules! info_m {
@@ -91,6 +91,7 @@ pub async fn run_background_task(config: &ConfigSettings) -> BackupResult<()>{
         let filename_without_enc = filename.trim_end_matches(".enc");
         delete_file(format!("{}/{}", config.destination, filename_without_enc))?;
         println!("Backup made at {}", Local::now().format("%Y-%m-%d %H:%M:%S"));
+        watch_file_changes(config.source.clone(), config.destination.clone(), config.exclude.clone(), dcount)?;
         tokio::time::sleep(tokio::time::Duration::from_secs(60 * config.interval as u64)).await;
     }
 }

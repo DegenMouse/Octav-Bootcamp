@@ -12,6 +12,9 @@ use zip::write::FileOptions;
 use zip::ZipArchive;
 use walkdir::WalkDir;
 use colored::Colorize;
+use notify::{Watcher, RecursiveMode};
+use std::sync::mpsc::{channel, RecvTimeoutError};
+use std::time::Duration;
 
 use crate::error::BackupResult;
 use crate::consts::ConfigSettings;
@@ -235,5 +238,54 @@ pub fn create_report(info: ReportInfo, destination: String) -> BackupResult<()> 
 pub fn delete_file(path: String) -> BackupResult<()> {
     let from_paths = vec![path];
     remove_items(&from_paths)?;
+    Ok(())
+}
+
+pub fn watch_file_changes(path: String, _destination: String, _exclude: ExcludeTypes, _count: i32) -> BackupResult<()> {
+    let watch_path = Path::new(&path);
+    println!("Starting file monitoring for path: {}", watch_path.display());
+    
+    let (tx, rx) = channel();
+    let watch_path_owned = watch_path.to_path_buf();
+
+    let mut watcher = notify::recommended_watcher(move |res| {
+        match res {
+            Ok(event) => tx.send(event).unwrap_or_else(|e| eprintln!("Error sending event: {}", e)),
+            Err(e) => eprintln!("Watch error: {}", e),
+        }
+    })?;
+
+    // !!! Watch the path recursively to monitor all subdirectories
+    watcher.watch(watch_path, RecursiveMode::Recursive)?;
+
+    loop {
+        match rx.recv_timeout(Duration::from_secs(1)) {
+            Ok(event) => {
+                if let notify::EventKind::Modify(notify::event::ModifyKind::Data(_)) = event.kind {
+                    if let Some(modified_path) = event.paths.first() {
+                        let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S").to_string();
+                        if let Ok(relative_path) = modified_path.strip_prefix(&watch_path_owned) {
+                            println!("{} - File modified: {} at {}", 
+                                "MODIFIED".yellow(),
+                                relative_path.display(),
+                                timestamp
+                            );
+                            //compress(path.clone(), _destination.clone(), _exclude.clone(), _count + 1)?;
+                        }
+                    }
+                }
+            },
+            Err(e) => {
+                match e {
+                    RecvTimeoutError::Timeout => continue,
+                    RecvTimeoutError::Disconnected => {
+                        eprintln!("Watch error: Channel disconnected");
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
     Ok(())
 }
