@@ -1,5 +1,6 @@
 import net from 'net';
 import { toLE, formatIPv6, toBE, calculateChecksum } from './helpers';
+import chalk from 'chalk';
 
 const prepareVersionMessage = (ip: string): string => {
     let unixTimeSeconds = Math.floor(Date.now() / 1000);
@@ -50,19 +51,19 @@ export const establishTCP = (ip: string): void => {
     let client = new net.Socket();
     let handshakeComplete = false;
     
-    console.log(`Performing handshake for ${ip}`);
+    console.log(chalk.green(`Performing handshake for ${ip}`));
 
     const timeout = setTimeout(() => {
         if (!handshakeComplete) {
-            console.log("Handshake timed out");
+            console.log(chalk.red("Handshake timed out"));
             client.destroy();
         }
-    }, 10000);
+    }, 5000);
 
     client.connect({ port: 8333, host: ip }, () => {
         const messageBuffer = Buffer.from(versionMessage, 'hex');
         client.write(messageBuffer);
-        console.log("→ Sending: VERSION");
+        console.log(chalk.green("→ Sending: VERSION"));
     });
 
     let receivedVersion = false;
@@ -75,15 +76,15 @@ export const establishTCP = (ip: string): void => {
         messages.forEach(message => {
             if (message.includes("76657273696f6e")) {  // version
                 receivedVersion = true;
-                console.log("← Received: VERSION from node");
-                console.log("→ Sending: VERACK");
-                const verackMessage = "f9beb4d976657261636b000000000000000000005df6e0e2";
+                console.log(chalk.green("← Received: VERSION from node"));
+                console.log(chalk.green("→ Sending: VERACK"));
+                let verackMessage = "f9beb4d976657261636b000000000000000000005df6e0e2";
                 client.write(Buffer.from(verackMessage, 'hex'));
             }
             else if (message.includes("76657261636b")) {  // verack
                 receivedVerack = true;
-                console.log("← Received: VERACK from node");
-                console.log("✓ Handshake completed!");
+                console.log(chalk.green("← Received: VERACK from node"));
+                console.log(chalk.green("✓ Handshake completed!"));
                 handshakeComplete = true;
                 clearTimeout(timeout);
                 client.end();
@@ -93,7 +94,7 @@ export const establishTCP = (ip: string): void => {
 
     client.on("error", () => {
         if (!handshakeComplete) {
-            console.log("Failed to connect to node");
+            console.log(chalk.red("Failed to connect to node"));
         }
         clearTimeout(timeout);
     });
@@ -101,7 +102,7 @@ export const establishTCP = (ip: string): void => {
     client.on("close", () => {
         // Only log if we haven't completed the handshake and haven't shown an error
         if (!handshakeComplete && !receivedVersion) {
-            console.log("Connection closed before handshake completion");
+            console.log(chalk.red("Connection closed before handshake completion"));
         }
     });
 }
