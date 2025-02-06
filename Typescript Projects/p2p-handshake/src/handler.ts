@@ -15,12 +15,15 @@ const ips = new Command("ips")
   .argument("<number>", "Number")
   .action(async (number) => {
     performLookup(number);
-});
+  });
 
 const handshake = new Command("handshake")
   .description("Performs the p2p handshake")
   .alias("f")
-  .argument("<ip>", "Ip of the bitcoin node for which to establish the handshake")
+  .argument(
+    "<ip>",
+    "Ip of the bitcoin node for which to establish the handshake"
+  )
   .action((ip) => {
     establishTCP(ip);
   });

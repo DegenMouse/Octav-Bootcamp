@@ -1,7 +1,7 @@
 import { parseAndHandle } from "./handler";
 
 async function main() {
-    await parseAndHandle();
+  await parseAndHandle();
 }
 
 main();

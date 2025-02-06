@@ -1,6 +1,3 @@
-import { p2pProgram } from './handler';
+import { p2pProgram } from "./handler";
 
 p2pProgram.parse(process.argv);
-
-
-
