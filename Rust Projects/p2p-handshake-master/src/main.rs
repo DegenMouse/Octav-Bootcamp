@@ -81,9 +81,6 @@ fn get_succesfull() -> Result<()> {
         })
     })?;
 
-    for logs in logs_iter {
-        println!("{:?}", logs.unwrap())
-    }
 
     Ok(())
 }
