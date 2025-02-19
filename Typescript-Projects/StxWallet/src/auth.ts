@@ -1,7 +1,8 @@
 import { broadcastTransaction, getAddressFromPrivateKey, makeSTXTokenTransfer } from "@stacks/transactions";
 import { randomSeedPhrase, generateWallet } from "@stacks/wallet-sdk";
-import { question } from "./helper";
 import * as bip39 from "bip39";
+
+import { question } from "./helper";
 
 export var authenticated = false;
 

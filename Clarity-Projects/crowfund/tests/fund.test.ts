@@ -2,13 +2,14 @@ import { describe, expect, it } from "vitest";
 
 const accounts = simnet.getAccounts();
 const address1 = accounts.get("wallet_1")!;
+const address2 = accounts.get("wallet_2")!;
 import { Cl, cvToValue } from '@stacks/transactions';
 /*
   The test below is an example. To learn more, read the testing documentation here:
   https://docs.hiro.so/stacks/clarinet-js-sdk
 */
 
-//TODO: Fix all tetsts
+//TODO: Fix all tests
 
 describe("tests", () => {
   it("ensures simnet is well initalised", () => {
@@ -53,19 +54,40 @@ describe("tests", () => {
   });
 
   it("test claim", () => {
+    // Arrange
+    const goal = 1000;
+    const deadline = simnet.blockHeight + 100;
+    const title = "Test Campaign";
+    const campaign = simnet.callPublicFn('fund', 'new-campaign', [Cl.uint(goal), Cl.uint(deadline), Cl.stringAscii(title)], address1);
     const campaignId = 0;
-    const amount = 100;
+    const amount = 1000;
     simnet.callPublicFn('fund', 'contribute', [Cl.uint(campaignId), Cl.uint(amount)], address1);
-    simnet.callPublicFn('fund', 'claim', [Cl.uint(campaignId)], address1);
-    const balance = simnet.callPublicFn('fund', 'get-balance', [], address1);
-    expect(balance.result).toBeOk(Cl.uint(100000000000000));
+    // simnet.mineEmptyBlocks(101);
+
+    // Act
+    const {result: actual} = simnet.callPublicFn('fund', 'claim', [Cl.uint(campaignId)], address1);
+
+    // Assert
+    expect(actual).toBeOk(Cl.bool(true));
+
   });
 
   it("test refund", () => {
+    // Arrange
+    const goal = 1000;
+    const deadline = simnet.blockHeight + 100;
+    const title = "Test Campaign";
+    const campaign = simnet.callPublicFn('fund', 'new-campaign', [Cl.uint(goal), Cl.uint(deadline), Cl.stringAscii(title)], address1);
     const campaignId = 0;
-    simnet.callPublicFn('fund', 'refund', [Cl.uint(campaignId)], address1);
-    const balance = simnet.callPublicFn('fund', 'get-balance', [], address1);
-    expect(balance.result).toBeOk(Cl.uint(100000000000000));
+    const amount = 100;
+    simnet.callPublicFn('fund', 'contribute', [Cl.uint(campaignId), Cl.uint(amount)], address2);
+    simnet.mineEmptyBlocks(101);
+
+    // Act
+    const {result: actual} = simnet.callPublicFn('fund', 'refund', [Cl.uint(campaignId)], address2);
+
+    // Assert
+    expect(actual).toBeOk(Cl.bool(true));
   });
 
 });

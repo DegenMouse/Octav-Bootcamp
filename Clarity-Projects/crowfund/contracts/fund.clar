@@ -1,3 +1,4 @@
+
 ;; Errors types
 (define-constant owner-only (err u100))
 (define-constant past-deadline (err u101))
@@ -9,11 +10,8 @@
 (define-constant campaign-not-found (err u107))
 (define-constant unauthurised (err u103))
 
+
 (define-data-var campaign-nonce uint u0)
-(define-data-var copy-tx principal tx-sender)
-
-;; TODO: states for campaign
-
 (define-map campaign
     uint
     {
@@ -26,8 +24,11 @@
 )
 
 (define-map refunds 
-    {campaign-id: uint, contributor: principal} 
-    {amount: uint}
+    uint
+    {
+        amount: uint,
+        contributor: principal
+    } 
 )
 
 (define-public (new-campaign 
@@ -55,6 +56,7 @@
     )
 )
 
+
 (define-public (cancel-campaign (campaign-id uint))
     (let (
         (existing-campaign (unwrap! (map-get? campaign campaign-id) campaign-not-found))
@@ -74,8 +76,8 @@
     (map-get? campaign campaign-id)
 )
 
-(define-read-only (get-refund (campaign-id uint) (contributor principal))
-    (map-get? refunds {campaign-id: campaign-id, contributor: contributor})
+(define-read-only (get-nonce) 
+    (var-get campaign-nonce)
 )
 
 (define-public (contribute (campaign-id uint) (amount uint))
@@ -95,9 +97,9 @@
     (map-set campaign campaign-id 
       (merge campaign-data { contributions: (+ current-contributions amount) }))
     
-    (let ((existing-refund (default-to  {amount: u0} (map-get? refunds {campaign-id: campaign-id, contributor: tx-sender}))))
-        (map-set refunds {campaign-id: campaign-id, contributor: tx-sender} 
-            (merge existing-refund {amount: (+ amount (get amount existing-refund))})))
+    (let ((existing-refund (default-to {amount: u0, contributor: tx-sender} (map-get? refunds campaign-id))))
+        (map-set refunds campaign-id 
+            (merge existing-refund {amount: (+ amount (get amount existing-refund)), contributor: tx-sender})))
     
     (ok {
         campaign: {
@@ -114,6 +116,7 @@
     })
   )
 )
+
 
 (define-public (claim (campaign-id uint))
     (let (
@@ -135,24 +138,17 @@
 
 (define-public (refund (campaign-id uint))
     (let (
-        (refund-data (unwrap! (map-get? refunds {campaign-id: campaign-id, contributor: tx-sender}) failed-to-return-info))
+        (refund-data (unwrap! (map-get? refunds campaign-id) failed-to-return-info))
         (amount (get amount refund-data))
+        (contributor (get contributor refund-data))
         (campaign-data (unwrap! (map-get? campaign campaign-id) failed-to-return-info))
         (deadline (get deadline campaign-data))
     )
+        (asserts! (is-eq contributor tx-sender) unauthurised)
         (asserts! (>  stacks-block-height deadline) deadline-not-reached)
 
-        (var-set copy-tx tx-sender)
-        (as-contract (try! (stx-transfer? amount tx-sender (var-get copy-tx))))
-        
-        (map-delete refunds {campaign-id: campaign-id, contributor: tx-sender})
-        (ok {
-            amount: amount,
-            contributor: tx-sender
-        })
+        (as-contract (try! (stx-transfer? amount (as-contract tx-sender) contributor)))
+        (map-delete refunds campaign-id)
+        (ok true)
     )
-)
-
-(define-public (get-balance)
-    (ok (stx-get-balance tx-sender))
 )
