@@ -5,11 +5,13 @@
   (let 
     (
       (user-to-rate-current-reputation (unwrap-panic (get-user-reputation-wd user-to-rate))))
-      (if (or (>= reputation-amount (if (>= (unwrap-panic (get-user-reputation-wd tx-sender)) 50) -20 -10))
-                      (<= reputation-amount (if (>= (unwrap-panic (get-user-reputation-wd tx-sender)) 50) 20 10))
-                      (>= (+ user-to-rate-current-reputation reputation-amount) -100) 
-                      (<= (+ user-to-rate-current-reputation reputation-amount) 100)
-                      (not (is-eq user-to-rate tx-sender)))
+      (if (or 
+              (<= reputation-amount (if (>= (unwrap-panic (get-user-reputation-wd tx-sender)) 50) -20 -10))
+              (>= reputation-amount (if (>= (unwrap-panic (get-user-reputation-wd tx-sender)) 50) 20 10))
+              (<= (+ user-to-rate-current-reputation reputation-amount) -100)                 
+              (>= (+ user-to-rate-current-reputation reputation-amount) 100)
+              (is-eq user-to-rate tx-sender)
+          )
         (ok false)
         (let ((user-to-rate-updated-reputation (unwrap-panic (get-user-reputation-wd user-to-rate)))) 
           (try! (rate-user user-to-rate reputation-amount))
