@@ -36,6 +36,7 @@ Here are some property tests for the given contract:
   )
 )
 
+
 (define-public (test-repay (amount uint))
   (let ((current-loan-details (default-to { amount: u0, last-interaction-block: u0 } (map-get? loans tx-sender)))
         (accrued-interest-result (calculate-accrued-interest (get amount current-loan-details) (get last-interaction-block current-loan-details))))

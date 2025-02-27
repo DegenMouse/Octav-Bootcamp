@@ -13,20 +13,18 @@
 
 (define-public (rate-user (user-to-rate principal) (reputation-amount int))
   (begin
-    (asserts! (not (is-eq tx-sender user-to-rate)) err-same-user)
-    ;; (unwrap-panic (optional-decay-reputation tx-sender))
-    ;; (unwrap-panic (optional-decay-reputation user-to-rate))
+    (asserts! (not (is-eq tx-sender user-to-rate)) err-same-user) 
     (let
       (
-        (user-to-rate-reputation (unwrap-panic (get-user-reputation user-to-rate)))
+        (user-to-rate-reputation (default-to 0 (get-user-reputation user-to-rate)))
         (existing-data (default-to {ratings: (list)} (map-get? user-ratings tx-sender)))
         (existing-received-data (default-to {ratings: (list)} (map-get? received-ratings user-to-rate)))
         (new-rating {user: user-to-rate, amount: reputation-amount, height: stacks-block-height})
         (new-received-rating {user: tx-sender, amount: reputation-amount, height: stacks-block-height})
       )
       (asserts! (and 
-                  (>= reputation-amount (if (>= (unwrap-panic (get-user-reputation tx-sender)) 50) -20 -10))
-                  (<= reputation-amount (if (>= (unwrap-panic (get-user-reputation tx-sender)) 50) 20 10))
+                  (>= reputation-amount (if (>= (default-to 0 (get-user-reputation tx-sender)) 50) -20 -10))
+                  (<= reputation-amount (if (>= (default-to 0 (get-user-reputation tx-sender)) 50) 20 10))
                   (>= (+ user-to-rate-reputation reputation-amount) -100) 
                   (<= (+ user-to-rate-reputation reputation-amount) 100)) 
                 err-invalid-reputation-amount)
@@ -63,19 +61,22 @@
   )
 )
 
-(define-private (optional-decay-reputation (user principal))
+
+(define-public (optional-decay-reputation (user principal))
   (let 
     (
       (last-decay (default-to stacks-block-height (get last-decay (map-get? user-decay user)))) 
       (decay-periods (/ (- stacks-block-height last-decay) u1000))
       (current-rep (default-to 0 (get reputation (map-get? user-reputation user))))
     )
-    (if (and (is-eq decay-periods u0) (<= current-rep 0))
+    (if (is-eq decay-periods u0)
       (begin 
+        ;; No decay needed, just update the timestamp
         (map-set user-decay user {last-decay: stacks-block-height})
         (ok current-rep)
       )
       (begin
+        ;; Apply decay only when enough time has passed
         (map-set user-decay user {last-decay: stacks-block-height})
         (map-set user-reputation user {reputation: (- current-rep (/ current-rep 10))})
         (ok (- current-rep (/ current-rep 10))))
@@ -83,12 +84,15 @@
   )
 )
 
-
-(define-private (get-user-reputation (user principal)) 
+(define-private (get-user-reputation-wd (user principal)) 
   (begin
     (unwrap-panic (optional-decay-reputation user))
     (ok (default-to 0 (get reputation (map-get? user-reputation user))))
   )
+)
+
+(define-read-only (get-user-reputation (user principal)) 
+  (get reputation (map-get? user-reputation user))
 )
 
 (define-read-only (get-ratings-made (user principal)) 
@@ -118,4 +122,3 @@
     (index-of (map get-user ratings) tx-sender)
   )
 )
-
