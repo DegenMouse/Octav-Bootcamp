@@ -13,7 +13,9 @@
 
 (define-public (rate-user (user-to-rate principal) (reputation-amount int))
   (begin
-    (asserts! (not (is-eq tx-sender user-to-rate)) err-same-user) 
+    (asserts! (not (is-eq tx-sender user-to-rate)) err-same-user)
+    ;; (unwrap-panic (optional-decay-reputation tx-sender))
+    ;; (unwrap-panic (optional-decay-reputation user-to-rate))
     (let
       (
         (user-to-rate-reputation (default-to 0 (get-user-reputation user-to-rate)))
@@ -61,7 +63,6 @@
   )
 )
 
-
 (define-public (optional-decay-reputation (user principal))
   (let 
     (
@@ -83,6 +84,13 @@
     )
   )
 )
+
+;; (define-public (test-optional-decay-reputation (user principal))
+;;   (begin
+    
+;;     (ok true)
+;;   )
+;; )
 
 (define-private (get-user-reputation-wd (user principal)) 
   (begin
@@ -122,3 +130,4 @@
     (index-of (map get-user ratings) tx-sender)
   )
 )
+
