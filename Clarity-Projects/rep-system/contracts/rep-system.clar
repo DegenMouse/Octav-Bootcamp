@@ -17,6 +17,7 @@
     (let
       (
         (user-to-rate-reputation (default-to 0 (get-user-reputation user-to-rate)))
+        (user-to-rate-reputation (default-to 0 (get-user-reputation user-to-rate)))
         (existing-data (default-to {ratings: (list)} (map-get? user-ratings tx-sender)))
         (existing-received-data (default-to {ratings: (list)} (map-get? received-ratings user-to-rate)))
         (existing-all-ratings (default-to {ratings: (list)} (map-get? all-ratings-made tx-sender)))
@@ -26,6 +27,8 @@
       (asserts! (and 
                   (>= reputation-amount (if (>= (default-to 0 (get-user-reputation tx-sender)) 50) -20 -10))
                   (<= reputation-amount (if (>= (default-to 0 (get-user-reputation tx-sender)) 50) 20 10))
+                  (>= reputation-amount (if (>= (default-to 0 (get-user-reputation tx-sender)) 50) -20 -10))
+                  (<= reputation-amount (if (>= (default-to 0 (get-user-reputation tx-sender)) 50) 20 10))
                   (>= (+ user-to-rate-reputation reputation-amount) -100) 
                   (<= (+ user-to-rate-reputation reputation-amount) 100)) 
                 err-invalid-reputation-amount)
@@ -33,6 +36,7 @@
         height 
           (begin
             (asserts! (>= stacks-block-height (+ height u1000)) err-already-made-at-this-block-height)
+<<<<<<< Updated upstream
             (let 
               (
                 (idx (unwrap! (find-index user-to-rate) err-bop))
@@ -48,10 +52,23 @@
               (map-set all-ratings-made tx-sender {ratings:
                 (unwrap! (as-max-len? (concat (get ratings existing-all-ratings) (list new-rating)) u200) 
                 err-maximum-ratings-reached)}))
+=======
+            (let ((idx (unwrap! (find-index user-to-rate) err-maximum-ratings-reached))
+                  (current-ratings (get ratings existing-data))
+                  (previous-rating (unwrap! (element-at? current-ratings idx) err-maximum-ratings-reached)))
+              (map-set user-ratings tx-sender {ratings: 
+                (default-to current-ratings (replace-at? current-ratings idx new-rating))})
+              (map-set received-ratings user-to-rate {ratings:
+                (default-to (get ratings existing-received-data) 
+                  (replace-at? (get ratings existing-received-data) idx new-received-rating))})
+              (map-set user-reputation user-to-rate 
+                {reputation: (+ (- user-to-rate-reputation (get amount previous-rating)) reputation-amount)}))
+>>>>>>> Stashed changes
             )
         (begin 
           (map-set user-ratings tx-sender {ratings:
-            (unwrap! (as-max-len? (concat (get ratings existing-data) (list new-rating)) u200) 
+            (unwrap! (as-max-len? 
+              (concat (get ratings existing-data) (list new-rating)) u200) 
             err-maximum-ratings-reached)})
           (map-set received-ratings user-to-rate {ratings: (unwrap! (as-max-len? 
             (concat (get ratings existing-received-data) (list new-received-rating)) u200) 
@@ -114,9 +131,14 @@
 )
 
 (define-read-only (get-rated-height (user-to-rate principal))
+<<<<<<< Updated upstream
   (let 
     ((ratings (get ratings (default-to {ratings: (list)} (map-get? user-ratings tx-sender)))))
     (match (index-of (map get-user ratings) user-to-rate)
+=======
+  (let ((ratings (get ratings (default-to {ratings: (list)} (map-get? received-ratings user-to-rate)))))
+    (match (index-of (map get-user ratings) tx-sender)
+>>>>>>> Stashed changes
       index (some (unwrap! (get height (element-at? ratings index)) none))
       none
     )
