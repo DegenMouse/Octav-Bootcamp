@@ -51,14 +51,50 @@ log_level = "info"
 
 ## Usage
 
-Basic usage:
+### Basic Commands
+
+Start the backup process:
 ```bash
-automated-backup --config config.toml
+cargo run -- start
 ```
 
-Command-line options:
+Stop the backup process:
 ```bash
-automated-backup --help
+cargo run -- stop
+```
+
+Check backup status:
+```bash
+cargo run -- status
+```
+
+View backup logs:
+```bash
+cargo run -- logs
+```
+
+### Configuration
+
+Configure backup settings:
+```bash
+cargo run -- config
+```
+
+### Restore Operations
+
+Restore the latest backup:
+```bash
+cargo run -- restore latest
+```
+
+Restore a specific backup:
+```bash
+cargo run -- restore custom
+```
+
+Restore from a specific location:
+```bash
+cargo run -- restore latest --location /path/to/backup
 ```
 
 ## Project Structure
@@ -67,10 +103,14 @@ automated-backup --help
 AutomatedBackUp/
 ├── src/
 │   ├── main.rs
-│   ├── backup.rs
-│   ├── scheduler.rs
-│   ├── logger.rs
+│   ├── args.rs
+│   ├── file_io.rs
+│   ├── demon.rs
+│   ├── encryption.rs
+│   ├── consts.rs
+│   ├── handle.rs
 │   └── error.rs
+├── BackUpInfo/
 ├── tests/
 ├── Cargo.toml
 └── README.md
