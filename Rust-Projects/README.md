@@ -15,6 +15,7 @@ A robust file backup solution that demonstrates Rust's capabilities in system pr
 A modern weather application that showcases Rust's ability to work with external APIs and handle asynchronous operations. Features include:
 - Real-time weather data fetching
 - Location-based weather information
+- Live weather comparison between different locations
 - Temperature and forecast display
 - Error handling for API failures
 
@@ -23,7 +24,6 @@ A powerful tool demonstrating Rust's performance capabilities in cryptographic o
 - Multiple hashing algorithm support
 - Dictionary-based password cracking
 - Performance optimization
-- Progress monitoring
 
 ## Other Projects
 
