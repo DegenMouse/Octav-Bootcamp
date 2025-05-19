@@ -10,6 +10,7 @@ A robust file backup solution that demonstrates Rust's capabilities in system pr
 - Configurable backup schedules
 - Progress tracking and logging
 - Error handling and recovery
+- File encryption
 
 ### 🌤️ Weather Application
 A modern weather application that showcases Rust's ability to work with external APIs and handle asynchronous operations. Features include:
@@ -17,7 +18,6 @@ A modern weather application that showcases Rust's ability to work with external
 - Location-based weather information
 - Live weather comparison between different locations
 - Temperature and forecast display
-- Error handling for API failures
 
 ### 🔐 Hash Cracker
 A powerful tool demonstrating Rust's performance capabilities in cryptographic operations. Features include:
