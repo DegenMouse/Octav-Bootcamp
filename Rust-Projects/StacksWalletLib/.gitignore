@@ -21,6 +21,12 @@ Cargo.lock
 .DS_Store
 Thumbs.db
 
-# Network related
-*.pcap
-*.log
+# Blockchain wallet specific
+*.wallet
+*.key
+*.seed
+*.mnemonic
+*.backup
+*.encrypted
+*.stx
+*.btc 

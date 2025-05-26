@@ -95,14 +95,14 @@ pub fn print_logs(config: &ConfigSettings) -> BackupResult<()> {
 }
 
 pub fn get_config_from_json() -> BackupResult<ConfigSettings> {
-    let config_path = "/Users/octavoprita/Documents/Projects/Rust/Rust-Projects/AutomatedBackUp/BackUpInfo/config_user.json";
+    let config_path = "/Users/octavoprita/Documents/Projects/DegenLab/Octav-Bootcamp/Rust-Projects/AutomatedBackUp/BackUpInfo/config_user.json";
     let config_file = fs::File::open(config_path)?;
     let config: ConfigSettings = serde_json::from_reader(config_file)?;
     Ok(config)
 }
 
 pub fn save_config_to_json(config: &ConfigSettings) -> BackupResult<()> {
-    let config_path = "/Users/octavoprita/Documents/Projects/Rust/Rust-Projects/AutomatedBackUp/BackUpInfo/config_user.json";
+    let config_path = "/Users/octavoprita/Documents/Projects/DegenLab/Octav-Bootcamp/Rust-Projects/AutomatedBackUp/BackUpInfo/config_user.json";
     let config_file = fs::File::create(config_path)?;
     serde_json::to_writer_pretty(config_file, config)?;
     Ok(())

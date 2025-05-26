@@ -21,6 +21,9 @@ Cargo.lock
 .DS_Store
 Thumbs.db
 
-# Network related
-*.pcap
-*.log
+# Dictionary and sensitive files
+*.dict
+*.wordlist
+*.hash
+*.cracked
+*.log 

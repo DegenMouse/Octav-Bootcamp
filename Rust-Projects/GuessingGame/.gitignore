@@ -21,6 +21,6 @@ Cargo.lock
 .DS_Store
 Thumbs.db
 
-# Network related
-*.pcap
-*.log
+# Game specific
+*.score
+*.save 
