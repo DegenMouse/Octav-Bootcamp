@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quote of the Day</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white rounded-2xl shadow-xl p-8 max-w-xl text-center">
+    <h1 class="text-2xl font-semibold mb-4 text-gray-800">Quote of the Day</h1>
+    <div class="space-y-4">
+      <p id="quote" class="text-lg text-gray-600 italic">Loading...</p>
+      <p id="author" class="text-md text-gray-500">- <span>Loading...</span></p>
+      <p id="category" class="text-sm text-gray-400">Category: <span>Loading...</span></p>
+    </div>
+    <button
+      onclick="fetchQuote()"
+      class="mt-6 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+    >
+      New Quote
+    </button>
+  </div>
+
+  <script>
+    const categoryEmojis = {
+      home: "🏡",
+      god: "👑",
+      future: "🔮",
+      love: "💖",
+      life: "🌟",
+      success: "💪",
+      time: "⏳",
+      work: "💼",
+      money: "💰",
+      health: "💪",
+      family: "👪",
+      friends: "👥",
+      business: "💼",
+      education: "🎓",
+      entertainment: "🎥",
+      environment: "🌍",
+      history: "📜",
+      politics: "🇺🇸",
+      intelligence: "🧠",
+      spirituality: "🔮",
+      philosophy: "🤔",
+      science: "🔬",
+      technology: "💻",
+      art: "🎨",
+      music: "🎵",
+      nature: "🌿",
+      travel: "🌍",
+      food: "🍔",
+      fashion: "👗",
+      sports: "🏆",
+      movies: "🎥",
+      attitude: "🤔",
+      motivation: "💪",
+      failure: "💔",
+      great: "👑",
+      experience: "🤔",
+      wisdom: "💡",
+      knowledge: "🧠",
+      creativity: "🎨",
+      innovation: "💡",
+      leadership: "👑",
+      mom: "👩",
+    };
+
+    async function fetchQuote() {
+      try {
+        const res = await fetch("http://localhost:8000/quotes/1");
+        const data = await res.json();
+        const quote = data[0];
+        document.getElementById("quote").textContent = quote.quote;
+        document.getElementById("author").querySelector("span").textContent = quote.author;
+        document.getElementById("category").querySelector("span").textContent = 
+            (categoryEmojis[quote.category] || "") + " " + quote.category;
+      } catch (err) {
+        document.getElementById("quote").textContent = "Error fetching quote.";
+        document.getElementById("author").querySelector("span").textContent = "";
+        document.getElementById("category").querySelector("span").textContent = "";
+        console.error(err);
+      }
+    }
+
+    // Fetch initial quote on load
+    fetchQuote();
+  </script>
+</body>
+</html>

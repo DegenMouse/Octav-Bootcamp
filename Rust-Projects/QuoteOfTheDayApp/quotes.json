@@ -1,0 +1,464 @@
+[
+  {
+    "quote": "The people I want are very famous and very rich, and all I can offer them is a bit of exposure on TV and a bit of cash, so it's a miracle we get any guests at all. But we have been very lucky.",
+    "author": "Graham Norton",
+    "category": "famous",
+    "time_stamp": "2025-01-10 17:38:02"
+  },
+  {
+    "quote": "I find beauty in the grotesque, like most artists.",
+    "author": "Alexander McQueen",
+    "category": "beauty",
+    "time_stamp": "2025-01-10 17:38:03"
+  },
+  {
+    "quote": "Learning starts with failure the first failure is the beginning of education.",
+    "author": "John Hersey",
+    "category": "learning",
+    "time_stamp": "2025-01-10 17:38:04"
+  },
+  {
+    "quote": "Many will view the compromises that will be made during your negotiations as painful concessions. But why not view them as peace offerings, ones that will provide in return the priceless gifts of hope, security and freedom for our children and our children's?",
+    "author": "King Abdullah II",
+    "category": "hope",
+    "time_stamp": "2025-01-10 17:38:04"
+  },
+  {
+    "quote": "The charm of history and its enigmatic lesson consist in the fact that, from age to age, nothing changes and yet everything is completely different.",
+    "author": "Aldous Huxley",
+    "category": "history",
+    "time_stamp": "2025-01-10 17:38:05"
+  },
+  {
+    "quote": "A fact must be assimilated with, or discriminated fromm, some other fact or facts, in order to be raised to the dignity of a truth, and made to convey the least knowledge to the mind.",
+    "author": "Henry Mayhew",
+    "category": "knowledge",
+    "time_stamp": "2025-01-10 19:09:32"
+  },
+  {
+    "quote": "The townspeople outside the reservations had a very superior attitude toward Indians, which was kind of funny, because they weren't very wealthy they were on the fringes of society themselves.",
+    "author": "James Welch",
+    "category": "attitude",
+    "time_stamp": "2025-01-10 19:09:32"
+  },
+  {
+    "quote": "I mean, Sting is one of my great buddies and I love him to death.",
+    "author": "Elton John",
+    "category": "death",
+    "time_stamp": "2025-01-10 19:09:33"
+  },
+  {
+    "quote": "That which is not good for the bee-hive cannot be good for the bees.",
+    "author": "Marcus Aurelius",
+    "category": "good",
+    "time_stamp": "2025-01-10 19:09:34"
+  },
+  {
+    "quote": "It became plain very soon after our marriage that ours was to be a literary partnership.",
+    "author": "Mary Augusta Ward",
+    "category": "marriage",
+    "time_stamp": "2025-01-10 19:09:34"
+  },
+  {
+    "quote": "The essence of statesmanship is not a rigid adherence to the past, but a prudent and probing concern for the future.",
+    "author": "Hubert H. Humphrey",
+    "category": "future",
+    "time_stamp": "2025-01-10 20:50:29"
+  },
+  {
+    "quote": "There is no happiness for people at the expense of other people.",
+    "author": "Anwar Sadat",
+    "category": "happiness",
+    "time_stamp": "2025-01-10 20:50:29"
+  },
+  {
+    "quote": "Most of the things worth doing in the world had been declared impossible before they were done.",
+    "author": "Louis D. Brandeis",
+    "category": "history",
+    "time_stamp": "2025-01-10 20:50:30"
+  },
+  {
+    "quote": "Somehow we can't live outside the politics of race. There's something very deep in all of us, that is taught to us when we are very, very little. Which is the disrespect and fear of the other.",
+    "author": "Anna Deavere Smith",
+    "category": "fear",
+    "time_stamp": "2025-01-10 20:50:41"
+  },
+  {
+    "quote": "Men can only be happy when they do not assume that the object of life is happiness.",
+    "author": "George Orwell",
+    "category": "men",
+    "time_stamp": "2025-01-10 20:50:42"
+  },
+  {
+    "quote": "My mother had morning sickness after I was born.",
+    "author": "Rodney Dangerfield",
+    "category": "morning",
+    "time_stamp": "2025-01-10 20:50:42"
+  },
+  {
+    "quote": "There has never yet been a man in our history who led a life of ease whose name is worth remembering.",
+    "author": "Theodore Roosevelt",
+    "category": "life",
+    "time_stamp": "2025-01-10 20:50:43"
+  },
+  {
+    "quote": "I do like to write nasty songs. It's a useful weapon to have, and it's cathartic as well, because I create art out of anger, something positive out of something negative.",
+    "author": "Lisa Marie Presley",
+    "category": "anger",
+    "time_stamp": "2025-01-10 20:50:44"
+  },
+  {
+    "quote": "Our lives sometimes depend on computers performing as predicted.",
+    "author": "Philip Emeagwali",
+    "category": "computers",
+    "time_stamp": "2025-01-10 20:51:03"
+  },
+  {
+    "quote": "Well, Jeff Buckley for me is one of the greatest singers I've ever heard. And the reason why is he has an amazing range, amazing emotional power in his voice. And the music he put around it also just had this passion and this soul to it and this spirit to it that very few artists have, and he passed at a very young age.",
+    "author": "John Legend",
+    "category": "amazing",
+    "time_stamp": "2025-01-10 20:51:04"
+  },
+  {
+    "quote": "As you age naturally, your family shows more and more on your face. If you deny that, you deny your heritage.",
+    "author": "Frances Conroy",
+    "category": "age",
+    "time_stamp": "2025-01-10 20:51:04"
+  },
+  {
+    "quote": "Some people worry that artificial intelligence will make us feel inferior, but then, anybody in his right mind should have an inferiority complex every time he looks at a flower.",
+    "author": "Alan Kay",
+    "category": "intelligence",
+    "time_stamp": "2025-01-10 20:51:05"
+  },
+  {
+    "quote": "At a family's most difficult time, I want to make sure at a minimum that they have the very basic of comforts: the ability to grieve their loss privately and the knowledge that their country is grateful for their loved one's sacrifice and service.",
+    "author": "Dave Reichert",
+    "category": "knowledge",
+    "time_stamp": "2025-01-10 20:51:06"
+  },
+  {
+    "quote": "We have a president who stole the presidency through family ties, arrogance and intimidation, employing Republican operatives to exercise the tactics of voter fraud by disenfranchising thousands of blacks, elderly Jews and other minorities.",
+    "author": "Barbra Streisand",
+    "category": "family",
+    "time_stamp": "2025-01-10 20:52:00"
+  },
+  {
+    "quote": "Live fast, die young, and leave a good looking corpse.",
+    "author": "John Derek",
+    "category": "good",
+    "time_stamp": "2025-01-10 20:52:01"
+  },
+  {
+    "quote": "You all know that I have been sustained throughout my life by three saving graces - my family, my friends, and a faith in the power of resilience and hope. These graces have carried me through difficult times and they have brought more joy to the good times than I ever could have imagined.",
+    "author": "Elizabeth Edwards",
+    "category": "hope",
+    "time_stamp": "2025-01-10 20:52:01"
+  },
+  {
+    "quote": "I don't want to spend my life not having good food going into my pie hole. That hole was made for pies.",
+    "author": "Paula Deen",
+    "category": "food",
+    "time_stamp": "2025-01-10 20:52:02"
+  },
+  {
+    "quote": "I don't make jokes. I just watch the government and report the facts.",
+    "author": "Will Rogers",
+    "category": "government",
+    "time_stamp": "2025-01-10 20:52:03"
+  },
+  {
+    "quote": "The new rage is to say that the government is the cause of all our problems, and if only we had no government, we'd have no problems. I can tell you, that contradicts evidence, history, and common sense.",
+    "author": "William J. Clinton",
+    "category": "government",
+    "time_stamp": "2025-01-10 20:52:23"
+  },
+  {
+    "quote": "I always wanted to be honest with myself and to those who have had faith in me.",
+    "author": "Rafael Nadal",
+    "category": "faith",
+    "time_stamp": "2025-01-10 20:52:23"
+  },
+  {
+    "quote": "I've been looking to do TV for a while. I've always done guest starring stuff. I've done a couple of multi-episode arcs, and I've always loved the experience.",
+    "author": "Christina Ricci",
+    "category": "experience",
+    "time_stamp": "2025-01-10 20:52:24"
+  },
+  {
+    "quote": "Friendship improves happiness and abates misery, by the doubling of our joy and the dividing of our grief.",
+    "author": "Marcus Tullius Cicero",
+    "category": "friendship",
+    "time_stamp": "2025-01-10 20:52:25"
+  },
+  {
+    "quote": "In dreams begins responsibility.",
+    "author": "William Butler Yeats",
+    "category": "dreams",
+    "time_stamp": "2025-01-10 20:52:26"
+  },
+  {
+    "quote": "Conventional wisdom on government's role in inequality often has it backwards. Tax reforms have resulted in a more progressive federal income tax government transfer payments have become less progressive.",
+    "author": "Paul Ryan",
+    "category": "government",
+    "time_stamp": "2025-01-10 20:56:33"
+  },
+  {
+    "quote": "I would absolutely, definitely never sell my wedding pictures to a magazine. I'd like it to be a special day, not a photo shoot. And once you've done that, your marriage becomes everybody else's business.",
+    "author": "Katherine Jenkins",
+    "category": "business",
+    "time_stamp": "2025-01-10 20:56:34"
+  },
+  {
+    "quote": "Presents don't really mean much to me. I don't want to sound mawkish, but - it was the realization that I have a great many people in my life who really love me, and who I really love.",
+    "author": "Gabriel Byrne",
+    "category": "birthday",
+    "time_stamp": "2025-01-10 20:56:35"
+  },
+  {
+    "quote": "In 1984, I turned to theater in the hopes of finding a more direct form of communication between me and my people.",
+    "author": "Cherrie Moraga",
+    "category": "communication",
+    "time_stamp": "2025-01-10 20:56:35"
+  },
+  {
+    "quote": "During the periods in my marriage when I chose to stay home with my kids rather than work as an attorney, it caused me no end of anxiety. Despite the fact that I knew I was contributing to our family by caring for our children, I still felt that my worth was less because I wasn't earning.",
+    "author": "Ayelet Waldman",
+    "category": "family",
+    "time_stamp": "2025-01-10 20:56:36"
+  },
+  {
+    "quote": "Dreams do come true, if we only wish hard enough, You can have anything in life if you will sacrifice everything else for it.",
+    "author": "James M. Barrie",
+    "category": "life",
+    "time_stamp": "2025-01-10 20:56:58"
+  },
+  {
+    "quote": "Most people are satisfied with the junk food being sold as music.",
+    "author": "Billy Joel",
+    "category": "food",
+    "time_stamp": "2025-01-10 20:56:58"
+  },
+  {
+    "quote": "But while they prate of economic laws, men and women are starving. We must lay hold of the fact that economic laws are not made by nature. They are made by human beings.",
+    "author": "Franklin D. Roosevelt",
+    "category": "men",
+    "time_stamp": "2025-01-10 20:56:59"
+  },
+  {
+    "quote": "The fact that I can plant a seed and it becomes a flower, share a bit of knowledge and it becomes another's, smile at someone and receive a smile in return, are to me continual spiritual exercises.",
+    "author": "Leo Buscaglia",
+    "category": "inspirational",
+    "time_stamp": "2025-01-10 20:57:00"
+  },
+  {
+    "quote": "I don't think young men or women should feel pressured into marriage. You shouldn't marry anyone, in my opinion, who you have to try hard for.",
+    "author": "Rachael Ray",
+    "category": "marriage",
+    "time_stamp": "2025-01-10 20:57:01"
+  },
+  {
+    "quote": "He is the best man who, when making his plans, fears and reflects on everything that can happen to him, but in the moment of action is bold.",
+    "author": "Herodotus",
+    "category": "best",
+    "time_stamp": "2025-01-10 22:01:30"
+  },
+  {
+    "quote": "An unschooled man who knows how to meditate upon the Lord has learned far more than the man with the highest education who does not know how to meditate.",
+    "author": "Charles Stanley",
+    "category": "learning",
+    "time_stamp": "2025-01-10 22:01:30"
+  },
+  {
+    "quote": "At a certain age, death becomes familiar to you-or a loss becomes familiar-the tragedies that are more commonplace in life.",
+    "author": "Jessica Lange",
+    "category": "death",
+    "time_stamp": "2025-01-10 22:01:31"
+  },
+  {
+    "quote": "But I think it's up to a local congregation to determine whether or not a marriage should be blessed of God. And it shouldn't be up to the government.",
+    "author": "Tony Campolo",
+    "category": "marriage",
+    "time_stamp": "2025-01-10 22:01:32"
+  },
+  {
+    "quote": "My hero is Michelle Williams, who I grew close to when we did 'Meek's Cutoff.' She's an extraordinary actor and mom.",
+    "author": "Zoe Kazan",
+    "category": "mom",
+    "time_stamp": "2025-01-10 22:01:32"
+  },
+  {
+    "quote": "Newlyweds shooting budget: 5k for actors, 2k insurance, 2k food and drink. 9k in the can. We only shot 12 days. That's how to make an independent film.",
+    "author": "Edward Burns",
+    "category": "food",
+    "time_stamp": "2025-01-10 22:01:56"
+  },
+  {
+    "quote": "To fear love is to fear life, and those who fear life are already three parts dead.",
+    "author": "Bertrand Russell",
+    "category": "love",
+    "time_stamp": "2025-01-10 22:01:57"
+  },
+  {
+    "quote": "I think more than writers, the major influences on me have been European movies, jazz, and Abstract Expressionism.",
+    "author": "Don DeLillo",
+    "category": "movies",
+    "time_stamp": "2025-01-10 22:01:58"
+  },
+  {
+    "quote": "I think every person has their own identity and beauty. Everyone being different is what is really beautiful. If we were all the same, it would be boring.",
+    "author": "Tila Tequila",
+    "category": "beauty",
+    "time_stamp": "2025-01-10 22:01:58"
+  },
+  {
+    "quote": "Look, I'm very much in favor of tax cuts, but not with borrowed money. And the problem that we've gotten into in recent years is spending programs with borrowed money, tax cuts with borrowed money, and at the end of the day that proves disastrous. And my view is I don't think we can play subtle policy here.",
+    "author": "Alan Greenspan",
+    "category": "money",
+    "time_stamp": "2025-01-10 22:01:59"
+  },
+  {
+    "quote": "If the education of our kids comes from radio, television, newspapers - if that's where they get most of their knowledge from, and not from the schools, then the powers that be are definitely in charge, because they own all those outlets.",
+    "author": "Maynard James Keenan",
+    "category": "knowledge",
+    "time_stamp": "2025-01-10 22:03:15"
+  },
+  {
+    "quote": "Protecting the institution of marriage safeguards, I believe, the American family.",
+    "author": "John Boehner",
+    "category": "family",
+    "time_stamp": "2025-01-10 22:03:16"
+  },
+  {
+    "quote": "Television is not real life. In real life people actually have to leave the coffee shop and go to jobs.",
+    "author": "Bill Gates",
+    "category": "life",
+    "time_stamp": "2025-01-10 22:03:17"
+  },
+  {
+    "quote": "I think on-stage nudity is disgusting, shameful and damaging to all things American. But if I were 22 with a great body, it would be artistic, tasteful, patriotic and a progressive religious experience.",
+    "author": "Shelley Winters",
+    "category": "experience",
+    "time_stamp": "2025-01-10 22:03:18"
+  },
+  {
+    "quote": "I believe that the will of the people is resolved by a strong leadership. Even in a democratic society, events depend on a strong leadership with a strong power of persuasion, and not on the opinion of the masses.",
+    "author": "Yitzhak Shamir",
+    "category": "leadership",
+    "time_stamp": "2025-01-10 22:03:18"
+  },
+  {
+    "quote": "I had a job at a movie theater for like a year and a half and then a job at a health food store for, like, two years. Those were the only two jobs I ever had.",
+    "author": "Reggie Watts",
+    "category": "food",
+    "time_stamp": "2025-01-10 22:03:28"
+  },
+  {
+    "quote": "People make music to get a reaction. Music is communication.",
+    "author": "Yoko Ono",
+    "category": "communication",
+    "time_stamp": "2025-01-10 22:03:29"
+  },
+  {
+    "quote": "If you expect the blessings of God, be kind to His people.",
+    "author": "Abu Bakr",
+    "category": "god",
+    "time_stamp": "2025-01-10 22:03:30"
+  },
+  {
+    "quote": "A man is as good as he has to be, and a woman as bad as she dares.",
+    "author": "Elbert Hubbard",
+    "category": "good",
+    "time_stamp": "2025-01-10 22:03:30"
+  },
+  {
+    "quote": "It seems to me there is a change in what audiences want to see. I can only hope that's correct, because there's an awful lot of people of my age around now and we outnumber the others.",
+    "author": "Maggie Smith",
+    "category": "hope",
+    "time_stamp": "2025-01-10 22:03:31"
+  },
+  {
+    "quote": "Never underestimate the power of dreams and the influence of the human spirit. We are all the same in this notion: The potential for greatness lives within each of us.",
+    "author": "Wilma Rudolph",
+    "category": "dreams",
+    "time_stamp": "2025-01-10 22:32:30"
+  },
+  {
+    "quote": "In the past, missionaries have traveled to far countries with the message of the gospel - with great hardship and often with the loss of life. In contrast, we can reach millions instantly from the comfort of our homes by merely hitting the 'send' button on our computers, or with iPads, or phones.",
+    "author": "Ray Comfort",
+    "category": "computers",
+    "time_stamp": "2025-01-10 22:32:30"
+  },
+  {
+    "quote": "I actually do think you're seeing this trend towards organizations just caring more about their brand and engaging. And so I think Home Depot will want to humanize itself. I think that's a lot of why companies are starting blogs, are just giving more insight into what's going on with them.",
+    "author": "Mark Zuckerberg",
+    "category": "home",
+    "time_stamp": "2025-01-10 22:32:31"
+  },
+  {
+    "quote": "To be clear, climate change is a true 800 pound gorilla in the room. The effects of global warming threaten global environmental upheaval over the coming century. But for South Florida and the Everglades, it could be our death knell if urgent action is not taken.",
+    "author": "Debbie Wasserman Schultz",
+    "category": "environmental",
+    "time_stamp": "2025-01-10 22:32:31"
+  },
+  {
+    "quote": "You say it is the good cause that hallows even war? I say unto you: it is the good war that hallows any cause.",
+    "author": "Friedrich Nietzsche",
+    "category": "good",
+    "time_stamp": "2025-01-10 22:32:32"
+  },
+  {
+    "quote": "When you arise in the morning, think of what a precious privilege it is to be alive - to breathe, to think, to enjoy, to love.",
+    "author": "Marcus Aurelius",
+    "category": "love",
+    "time_stamp": "2025-01-10 22:32:32"
+  },
+  {
+    "quote": "The show doesn't drive home a lesson, but it can open up people's minds enough for them to see how stupid every kind of prejudice can be.",
+    "author": "Redd Foxx",
+    "category": "home",
+    "time_stamp": "2025-01-10 22:32:33"
+  },
+  {
+    "quote": "I think it's so important to keep learning and keep your brain active.",
+    "author": "Beverley Mitchell",
+    "category": "learning",
+    "time_stamp": "2025-01-10 22:32:33"
+  },
+  {
+    "quote": "This is the America that I love. This is a great people. We can do anything. We can achieve anything. We've got a government that has gotten in the way of the American people. We're going to change that in November.",
+    "author": "Mitt Romney",
+    "category": "great",
+    "time_stamp": "2025-01-10 22:32:34"
+  },
+  {
+    "quote": "The greatest enemy to human souls is the self-righteous spirit which makes men look to themselves for salvation.",
+    "author": "Charles Spurgeon",
+    "category": "men",
+    "time_stamp": "2025-01-10 22:32:35"
+  },
+  {
+    "quote": "I think it's unfortunate that there exists only one path in America to complete social legitimacy, and that is marriage. I think, for instance, that it would be far easier for Americans to elect a black president or a female president than an unmarried president.",
+    "author": "Elizabeth Gilbert",
+    "category": "marriage",
+    "time_stamp": "2025-05-26 17:30:57"
+  },
+  {
+    "quote": "We need to recognise that what really matters isn't buying more and more consumer goods, but family, friends, and knowing that we are doing something worthwhile with our lives. Helping to reduce the appalling consequences of world poverty should be part of that reassessment.",
+    "author": "Peter Singer",
+    "category": "family",
+    "time_stamp": "2025-05-26 17:31:27"
+  },
+  {
+    "quote": "What does the future, that half of time, matter to the man who is infatuated with eternity?",
+    "author": "Emile M. Cioran",
+    "category": "future",
+    "time_stamp": "2025-05-26 17:32:12"
+  },
+  {
+    "quote": "Every war results from the struggle for markets and spheres of influence, and every war is sold to the public by professional liars and totally sincere religious maniacs, as a Holy Crusade to save God and Goodness from Satan and Evil.",
+    "author": "Robert Anton Wilson",
+    "category": "god",
+    "time_stamp": "2025-05-26 17:32:27"
+  }
+]
