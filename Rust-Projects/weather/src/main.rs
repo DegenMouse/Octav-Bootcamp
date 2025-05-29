@@ -1,3 +1,5 @@
+// use fetch::get_weather;
+
 mod args;
 mod console;
 mod fetch;
@@ -8,6 +10,8 @@ mod weather;
 #[tokio::main]
 async fn main() {
     console::flow().await;
+    let data = fetch::get_weather("London").await;
+    println!("{:?}", data);
 }
 
 

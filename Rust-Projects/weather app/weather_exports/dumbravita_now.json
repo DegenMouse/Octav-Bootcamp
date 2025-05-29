@@ -1,0 +1,274 @@
+{
+  "current": {
+    "current": {
+      "temp_c": -9.4,
+      "temp_f": 15.1,
+      "wind_kph": 4.3,
+      "wind_mph": 2.7,
+      "wind_dir": "SSW",
+      "precip_mm": 0.0,
+      "precip_in": 0.0
+    }
+  },
+  "hourly": {
+    "forecast": {
+      "forecastday": [
+        {
+          "date": "2025-01-14",
+          "day": {
+            "avgtemp_c": -8.2,
+            "avgtemp_f": 17.3,
+            "maxwind_kph": 4.3,
+            "maxwind_mph": 2.7,
+            "condition": {
+              "text": "Partly Cloudy "
+            }
+          },
+          "hour": [
+            {
+              "time": "2025-01-14 00:00",
+              "temp_c": -8.8,
+              "temp_f": 16.2,
+              "wind_kph": 0.4,
+              "wind_mph": 0.2,
+              "condition": {
+                "text": "Light freezing rain"
+              }
+            },
+            {
+              "time": "2025-01-14 01:00",
+              "temp_c": -8.3,
+              "temp_f": 17.1,
+              "wind_kph": 0.7,
+              "wind_mph": 0.4,
+              "condition": {
+                "text": "Light freezing rain"
+              }
+            },
+            {
+              "time": "2025-01-14 02:00",
+              "temp_c": -8.2,
+              "temp_f": 17.3,
+              "wind_kph": 1.1,
+              "wind_mph": 0.7,
+              "condition": {
+                "text": "Freezing fog"
+              }
+            },
+            {
+              "time": "2025-01-14 03:00",
+              "temp_c": -8.7,
+              "temp_f": 16.3,
+              "wind_kph": 1.4,
+              "wind_mph": 0.9,
+              "condition": {
+                "text": "Freezing fog"
+              }
+            },
+            {
+              "time": "2025-01-14 04:00",
+              "temp_c": -9.7,
+              "temp_f": 14.5,
+              "wind_kph": 2.2,
+              "wind_mph": 1.3,
+              "condition": {
+                "text": "Freezing fog"
+              }
+            },
+            {
+              "time": "2025-01-14 05:00",
+              "temp_c": -10.5,
+              "temp_f": 13.1,
+              "wind_kph": 2.2,
+              "wind_mph": 1.3,
+              "condition": {
+                "text": "Freezing fog"
+              }
+            },
+            {
+              "time": "2025-01-14 06:00",
+              "temp_c": -10.7,
+              "temp_f": 12.7,
+              "wind_kph": 2.9,
+              "wind_mph": 1.8,
+              "condition": {
+                "text": "Freezing fog"
+              }
+            },
+            {
+              "time": "2025-01-14 07:00",
+              "temp_c": -10.8,
+              "temp_f": 12.5,
+              "wind_kph": 2.9,
+              "wind_mph": 1.8,
+              "condition": {
+                "text": "Mist"
+              }
+            },
+            {
+              "time": "2025-01-14 08:00",
+              "temp_c": -11.0,
+              "temp_f": 12.2,
+              "wind_kph": 2.5,
+              "wind_mph": 1.6,
+              "condition": {
+                "text": "Mist"
+              }
+            },
+            {
+              "time": "2025-01-14 09:00",
+              "temp_c": -9.1,
+              "temp_f": 15.6,
+              "wind_kph": 1.8,
+              "wind_mph": 1.1,
+              "condition": {
+                "text": "Partly Cloudy "
+              }
+            },
+            {
+              "time": "2025-01-14 10:00",
+              "temp_c": -6.9,
+              "temp_f": 19.6,
+              "wind_kph": 1.4,
+              "wind_mph": 0.9,
+              "condition": {
+                "text": "Sunny"
+              }
+            },
+            {
+              "time": "2025-01-14 11:00",
+              "temp_c": -5.6,
+              "temp_f": 21.8,
+              "wind_kph": 2.9,
+              "wind_mph": 1.8,
+              "condition": {
+                "text": "Sunny"
+              }
+            },
+            {
+              "time": "2025-01-14 12:00",
+              "temp_c": -4.6,
+              "temp_f": 23.7,
+              "wind_kph": 2.5,
+              "wind_mph": 1.6,
+              "condition": {
+                "text": "Sunny"
+              }
+            },
+            {
+              "time": "2025-01-14 13:00",
+              "temp_c": -4.0,
+              "temp_f": 24.8,
+              "wind_kph": 3.2,
+              "wind_mph": 2.0,
+              "condition": {
+                "text": "Sunny"
+              }
+            },
+            {
+              "time": "2025-01-14 14:00",
+              "temp_c": -3.9,
+              "temp_f": 25.0,
+              "wind_kph": 4.3,
+              "wind_mph": 2.7,
+              "condition": {
+                "text": "Sunny"
+              }
+            },
+            {
+              "time": "2025-01-14 15:00",
+              "temp_c": -4.1,
+              "temp_f": 24.7,
+              "wind_kph": 3.2,
+              "wind_mph": 2.0,
+              "condition": {
+                "text": "Sunny"
+              }
+            },
+            {
+              "time": "2025-01-14 16:00",
+              "temp_c": -4.8,
+              "temp_f": 23.4,
+              "wind_kph": 2.9,
+              "wind_mph": 1.8,
+              "condition": {
+                "text": "Sunny"
+              }
+            },
+            {
+              "time": "2025-01-14 17:00",
+              "temp_c": -8.1,
+              "temp_f": 17.5,
+              "wind_kph": 0.7,
+              "wind_mph": 0.4,
+              "condition": {
+                "text": "Clear "
+              }
+            },
+            {
+              "time": "2025-01-14 18:00",
+              "temp_c": -9.1,
+              "temp_f": 15.6,
+              "wind_kph": 4.0,
+              "wind_mph": 2.5,
+              "condition": {
+                "text": "Clear "
+              }
+            },
+            {
+              "time": "2025-01-14 19:00",
+              "temp_c": -9.4,
+              "temp_f": 15.1,
+              "wind_kph": 4.3,
+              "wind_mph": 2.7,
+              "condition": {
+                "text": "Clear "
+              }
+            },
+            {
+              "time": "2025-01-14 20:00",
+              "temp_c": -9.6,
+              "temp_f": 14.7,
+              "wind_kph": 4.0,
+              "wind_mph": 2.5,
+              "condition": {
+                "text": "Clear "
+              }
+            },
+            {
+              "time": "2025-01-14 21:00",
+              "temp_c": -9.8,
+              "temp_f": 14.4,
+              "wind_kph": 4.0,
+              "wind_mph": 2.5,
+              "condition": {
+                "text": "Clear "
+              }
+            },
+            {
+              "time": "2025-01-14 22:00",
+              "temp_c": -10.0,
+              "temp_f": 14.0,
+              "wind_kph": 3.6,
+              "wind_mph": 2.2,
+              "condition": {
+                "text": "Clear "
+              }
+            },
+            {
+              "time": "2025-01-14 23:00",
+              "temp_c": -10.2,
+              "temp_f": 13.6,
+              "wind_kph": 3.6,
+              "wind_mph": 2.2,
+              "condition": {
+                "text": "Clear "
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "time": "1736877609"
+}
